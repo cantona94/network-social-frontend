@@ -1,8 +1,11 @@
+import { api } from "@/shared/api/base";
 import type { Action, ThunkAction } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    [api.reducerPath]: api.reducer,
+  },
 });
 
 export type AppStore = typeof store;
