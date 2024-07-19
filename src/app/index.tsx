@@ -2,9 +2,10 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { NextUIProvider } from "@nextui-org/react";
+import { RouterProvider } from "react-router-dom";
 import { store } from "./store";
 import { router } from "./router";
-import { RouterProvider } from "react-router-dom";
+import { ThemeProvider } from "./theme-provider";
 import "./global.css";
 
 const container = document.getElementById("root");
@@ -16,7 +17,9 @@ if (container) {
     <React.StrictMode>
       <Provider store={store}>
         <NextUIProvider>
-          <RouterProvider router={router} />;
+          <ThemeProvider>
+            <RouterProvider router={router} />;
+          </ThemeProvider>
         </NextUIProvider>
       </Provider>
     </React.StrictMode>
