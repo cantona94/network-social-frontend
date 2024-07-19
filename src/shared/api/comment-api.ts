@@ -1,4 +1,4 @@
-import { Comment } from "@/shared/models";
+import { Comment } from "@/shared/models/model-api";
 import { api } from "./base";
 
 export const commentApi = api.injectEndpoints({

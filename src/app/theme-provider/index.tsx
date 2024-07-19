@@ -1,21 +1,6 @@
-import { ReactNode, createContext, useState } from "react";
-
-const supportedThemes = {
-  light: "light",
-  dark: "dark",
-};
-
-type themes = keyof typeof supportedThemes;
-
-type ThemeContextType = {
-  theme: themes;
-  toggleTheme: () => void;
-};
-
-export const ThemeContext = createContext<ThemeContextType>({
-  theme: "dark",
-  toggleTheme: () => null,
-});
+import { ReactNode, useState } from "react";
+import { ThemeContext } from "@/shared/config/theme-context";
+import { themes } from "@/shared/models/model-theme";
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   const storedTheme = localStorage.getItem("theme");

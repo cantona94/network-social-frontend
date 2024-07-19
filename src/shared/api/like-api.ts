@@ -1,4 +1,4 @@
-import { Like } from "@/shared/models";
+import { Like } from "@/shared/models/model-api";
 import { api } from "./base";
 
 export const likeApi = api.injectEndpoints({

@@ -1,4 +1,4 @@
-import { User } from "@/shared/models";
+import { User } from "@/shared/models/model-api";
 import { api } from "./base";
 
 export const userApi = api.injectEndpoints({

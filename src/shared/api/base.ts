@@ -1,4 +1,4 @@
-import { BASE_URL } from "@/shared/config";
+import { BASE_URL } from "@/shared/config/base-url";
 import { createApi, fetchBaseQuery, retry } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
