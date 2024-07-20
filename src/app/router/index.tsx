@@ -1,9 +1,43 @@
 import { createBrowserRouter } from "react-router-dom";
-import { AuthPage } from "@/pages/auth";
+import { Layout } from "@/shared/ui/layout";
+import {
+  AuthPage,
+  CurrentPostPage,
+  FollowersPage,
+  FollowingPage,
+  PostsPage,
+  UserProfilePage,
+} from "@/pages";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/auth",
     element: <AuthPage />,
+  },
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "",
+        element: <PostsPage />,
+      },
+      {
+        path: "post/:id",
+        element: <CurrentPostPage />,
+      },
+      {
+        path: "user/:id",
+        element: <UserProfilePage />,
+      },
+      {
+        path: "followers",
+        element: <FollowersPage />,
+      },
+      {
+        path: "following",
+        element: <FollowingPage />,
+      },
+    ],
   },
 ]);

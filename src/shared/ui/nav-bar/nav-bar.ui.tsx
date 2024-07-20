@@ -23,7 +23,6 @@ export const NavBar = () => {
           </NavButton>
         </li>
       </ul>
-      k
     </nav>
   );
 };
