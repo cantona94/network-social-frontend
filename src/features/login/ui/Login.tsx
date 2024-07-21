@@ -64,7 +64,7 @@ export const Login = ({ setSelected }: Props) => {
       />
       <ErrorMessage error={error} />
       <p className="text-center text-small">
-        Нет аккаутна?{" "}
+        Нет аккаунта?{" "}
         <Link
           size="sm"
           className="cursor-pointer"
