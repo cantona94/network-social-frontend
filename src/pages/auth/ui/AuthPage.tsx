@@ -1,4 +1,5 @@
 import { Login } from "@/features/login";
+import { Register } from "@/features/register";
 import { Card, CardBody, Tab, Tabs } from "@nextui-org/react";
 import { useState } from "react";
 
@@ -20,7 +21,7 @@ export const AuthPage = () => {
                 <Login setSelected={setSelected} />
               </Tab>
               <Tab key="sign-up" title="Регистрация">
-                Register
+                <Register setSelected={setSelected} />
               </Tab>
             </Tabs>
           </CardBody>
