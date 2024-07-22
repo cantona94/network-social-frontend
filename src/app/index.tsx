@@ -6,6 +6,7 @@ import { RouterProvider } from "react-router-dom";
 import { store } from "./store";
 import { router } from "./router";
 import { ThemeProvider } from "./theme-provider";
+import { AuthGuard } from "./guard/authGuard";
 import "./global.css";
 
 const container = document.getElementById("root");
@@ -18,7 +19,9 @@ if (container) {
       <Provider store={store}>
         <NextUIProvider>
           <ThemeProvider>
-            <RouterProvider router={router} />
+            <AuthGuard>
+              <RouterProvider router={router} />
+            </AuthGuard>
           </ThemeProvider>
         </NextUIProvider>
       </Provider>
