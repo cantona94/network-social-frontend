@@ -5,7 +5,7 @@ export const AuthGuard = ({ children }: { children: JSX.Element }) => {
   const { isLoading } = useCurrentQuery();
 
   if (isLoading) {
-    return <Spinner />;
+    return <Spinner className="flex m-auto h-screen" />;
   }
 
   return children;
