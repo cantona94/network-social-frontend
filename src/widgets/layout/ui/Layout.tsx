@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Container } from "@/shared/ui/container";
-import { Header } from "@/shared/ui/header";
+import { Header } from "@/features/header";
 import { NavBar } from "@/shared/ui/nav-bar";
 
 export const Layout = () => {

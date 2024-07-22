@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Layout } from "@/shared/ui/layout";
+import { Layout } from "@/widgets/layout";
 import {
   AuthPage,
   CurrentPostPage,
