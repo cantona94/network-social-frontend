@@ -17,6 +17,10 @@ import { Input } from "@/shared/ui/input";
 import { ErrorMessage } from "@/shared/ui/error-message";
 import { MdOutlineEmail } from "react-icons/md";
 
+interface IUserForm extends Omit<User, "dateOfBirth"> {
+  dateOfBirth?: Date | string;
+}
+
 type Props = {
   isOpen: boolean;
   onClose: () => void;
@@ -34,13 +38,17 @@ export const EditProfile: React.FC<Props> = ({
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const { id } = useParams<{ id: string }>();
 
-  const { handleSubmit, control } = useForm<User>({
+  const { handleSubmit, control } = useForm<IUserForm>({
     mode: "onChange",
     reValidateMode: "onBlur",
     defaultValues: {
       email: user?.email,
       name: user?.name,
-      dateOfBirth: user?.dateOfBirth === null ? new Date() : user?.dateOfBirth,
+      dateOfBirth:
+        user?.dateOfBirth === null
+          ? new Date("1970-01-01").toISOString().slice(0, 10)
+          : user?.dateOfBirth &&
+            new Date(user.dateOfBirth).toISOString().slice(0, 10),
       bio: user?.bio === null ? "" : user?.bio,
       location: user?.location === null ? "" : user?.location,
     },
@@ -52,7 +60,7 @@ export const EditProfile: React.FC<Props> = ({
     }
   };
 
-  const onSubmit = async (data: User) => {
+  const onSubmit = async (data: IUserForm) => {
     if (id) {
       try {
         const formData = new FormData();
