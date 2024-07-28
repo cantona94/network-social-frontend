@@ -17,11 +17,7 @@ type Props = {
 };
 
 export const Register = ({ setSelected }: Props) => {
-  const {
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm<Register>({
+  const { handleSubmit, control } = useForm<Register>({
     mode: "onChange",
     reValidateMode: "onBlur",
     defaultValues: {

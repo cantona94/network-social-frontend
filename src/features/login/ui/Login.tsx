@@ -17,11 +17,7 @@ type Props = {
 };
 
 export const Login = ({ setSelected }: Props) => {
-  const {
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm<Login>({
+  const { handleSubmit, control } = useForm<Login>({
     mode: "onChange",
     reValidateMode: "onBlur",
     defaultValues: {

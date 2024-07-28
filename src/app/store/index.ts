@@ -1,10 +1,10 @@
 import { api } from "@/shared/api/base";
-import type { Action, ThunkAction } from "@reduxjs/toolkit";
+import type { Action, Store, ThunkAction } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import user from "@/entities/user/model/slice";
 import { listenerMiddleware } from "@/shared/middleware/auth";
 
-export const store = configureStore({
+export const store: Store = configureStore({
   reducer: {
     [api.reducerPath]: api.reducer,
     user,
